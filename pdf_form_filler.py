@@ -11,7 +11,7 @@ def _checkbox(annotation, value, export=None):
         export = '/' + export
     else:
         keys = annotation['/AP']['/N'].keys()
-        if ['/Off'] in keys:
+        if '/Off' in keys:
             keys.remove('/Off')
         export = keys[0]
     if value:
@@ -27,7 +27,7 @@ def _radio_button(annotation, value):
     for each in annotation['/Kids']:
         # determine the export value of each kid
         keys = each['/AP']['/N'].keys()
-        if ['/Off'] in keys:
+        if '/Off' in keys:
             keys.remove('/Off')
         export = keys[0]
 
